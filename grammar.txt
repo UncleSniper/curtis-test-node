@@ -1,0 +1,17 @@
+utterance	::= toplevel*
+toplevel	::= constant | doblock
+constant	::= 'const' NAME (':' expression)? '=' expression
+function	::= 'fun' '(' (parameter % ',')? ')' ('>' expression)? '=' expression
+parameter	::= NAME (':' expression)?
+typedef		::= 'type' ('<' expression)? '{' field* '}'
+field		::= NAME ':' expression
+doblock		::= 'do' expression
+expression	::= pi_expr
+				| typedef
+				| function
+pi_expr		::= primary ('.' NAME | '(' (expression % ',')? ')')*
+primary		::= INT
+				| NAME
+				| '(' expression ')'
+				| 'new' expression '{' (field_init % ',')? '}'
+field_init	::= NAME '=' expression
