@@ -1,8 +1,11 @@
 'use strict';
 
-class DualTypeVarConstraint {
+const TypeVarConstraint = require('./TypeVarConstraint.js');
 
-	constructor(typevarA, typevarB) {
+class DualTypeVarConstraint extends TypeVarConstraint {
+
+	constructor(typevarA, typevarB, constrainReason) {
+		super(constrainReason);
 		this.typevarA = typevarA;
 		this.typevarB = typevarB;
 		typevarA.dualConstraints.add(this);
