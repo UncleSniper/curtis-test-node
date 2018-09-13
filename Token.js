@@ -28,12 +28,14 @@ Token.T_RBRACE = 12;
 Token.T_GREATER = 13;
 Token.T_DO = 14;
 Token.T_DOT = 15;
+Token.T_NEW = 16;
 
 Token.TYPEMAP = {
 	'const': Token.T_CONST,
 	'fun': Token.T_FUN,
 	'type': Token.T_TYPE,
-	'do': Token.T_DO
+	'do': Token.T_DO,
+	'new': Token.T_NEW
 };
 
 module.exports = Token;
