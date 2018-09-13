@@ -10,6 +10,8 @@ class TypeVar extends EventEmitter {
 		super();
 		this.id = nextID++;
 		this.title = title;
+		this.singleConstraints = new Set();
+		this.dualConstraints = new Set();
 	}
 
 }
