@@ -1,8 +1,11 @@
 'use strict';
 
-class Precondition {
+const EventEmitter = require('events');
+
+class Precondition extends EventEmitter {
 
 	constructor(subject) {
+		super();
 		this.subject = subject;
 	}
 

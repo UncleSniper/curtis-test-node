@@ -1,11 +1,12 @@
 'use strict';
 
-class TypeVarConstraint {
+const Disableable = require('./Disableable.js');
+
+class TypeVarConstraint extends Disableable {
 
 	constructor(constrainReason) {
+		super();
 		this.constrainReason = constrainReason;
-		this.preconditions = new Set();
-		this.disables = new Map();
 	}
 
 }
