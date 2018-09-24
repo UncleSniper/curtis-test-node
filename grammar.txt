@@ -3,7 +3,7 @@ toplevel	::= constant | doblock
 constant	::= 'const' NAME (':' expression)? '=' expression
 function	::= 'fun' '(' (parameter % ',')? ')' ('>' expression)? '=' expression
 parameter	::= NAME (':' expression)?
-typedef		::= 'type' ('<' expression)? '{' field* '}'
+typedef		::= 'type' ('<' expression % ',')? '{' field* '}'
 field		::= NAME ':' expression
 doblock		::= 'do' expression
 expression	::= pi_expr
